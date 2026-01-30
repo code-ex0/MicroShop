@@ -4,5 +4,6 @@ metadata:
   creationTimestamp: null
   name: app-config
   namespace: microshop
-data: ENV=prod
-  LOG_LEVEL=info
+data:
+  ENV: prod
+  LOG_LEVEL: info
