@@ -23,7 +23,10 @@ spec:
           resources: {}
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: password
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: MYSQL_PASSWORD
             - name: MYSQL_ALLOW_EMPTY_PASSWORD
               value: "no"
             - name: MYSQL_RANDOM_ROOT_PASSWORD

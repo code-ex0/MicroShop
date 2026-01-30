@@ -24,4 +24,7 @@ spec:
           resources: {}
           command:
             ["/bin/sh", "-c", "while true; do echo backend; sleep 5; done"]
+          envFrom:
+            - configMapRef:
+                name: app-config
 status: {}

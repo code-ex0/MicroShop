@@ -26,4 +26,7 @@ spec:
         - image: nginx
           name: nginx
           resources: {}
+          envFrom:
+            - configMapRef:
+                name: app-config
 status: {}
