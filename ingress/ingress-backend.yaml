@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  creationTimestamp: null
+  name: ingress-backend
+  namespace: microshop
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: microshop.k8s.orb.local
+      http:
+        paths:
+          - backend:
+              service:
+                name: svc-backend
+                port:
+                  number: 3000
+            path: /api
+            pathType: Prefix
+status:
+  loadBalancer: {}
